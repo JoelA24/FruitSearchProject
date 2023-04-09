@@ -21,6 +21,10 @@ function searchHandler(e) {
   const inputVal = e.target.value;
   const results = search(inputVal);
   showSuggestions(results, inputVal);
+
+  if(inputVal === "") {
+    suggestions.style.display= 'none'
+  }
 }
 
 // Displays the fruits in the suggestions element
@@ -28,7 +32,9 @@ function showSuggestions(results, inputVal) {
   let html = '';
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
-    html += `<li>${result}</li>`;
+    constregx = new RegExp(inputVal, 'gi');
+    const boldResult = result.replace(regex, match => '<strong>${match}</strong>')
+    html += `<li>${boldResult}</li>`;
   }
   suggestions.innerHTML = html;
   if (results.length > 0) {
