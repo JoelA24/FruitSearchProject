@@ -6,6 +6,8 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 // Takes a string and returns an array of matching fruits
 function search(str) {
   let results = [];
+
+  // run a loop to check with submitted input
   for (let i = 0; i < fruit.length; i++) {
     if (fruit[i].toLowerCase().indexOf(str.toLowerCase()) !== -1) {
       results.push(fruit[i]);
@@ -40,7 +42,8 @@ function showSuggestions(results, inputVal) {
 function useSuggestion(e) {
   if (e.target.nodeName === 'LI') {
     input.value = e.target.innerText;
-    suggestions.style.display = 'none';
+    // clear suggestions list when emptied
+    suggestions.innerHTML='';
   }
 }
 
