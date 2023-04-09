@@ -44,5 +44,8 @@ function useSuggestion(e) {
   }
 }
 
+// Updates with each time the key goes up from being pressed
 input.addEventListener('keyup', searchHandler);
+
+// Updates and uses suggested item when li is clicked
 suggestions.addEventListener('click', useSuggestion);
