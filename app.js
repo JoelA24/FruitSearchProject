@@ -32,9 +32,10 @@ function showSuggestions(results, inputVal) {
   let html = '';
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
-    constregx = new RegExp(inputVal, 'gi');
-    const boldResult = result.replace(regex, match => '<strong>${match}</strong>')
-    html += `<li>${boldResult}</li>`;
+    const index = result.toLowerCase().indexOf(inputVal.toLowerCase());
+    if (index !== -1) {
+      html += `<li>${result.slice(0, index)}<strong>${result.slice(index, index + inputVal.length)}</strong>${result.slice(index + inputVal.length)}</li>`;
+    }
   }
   suggestions.innerHTML = html;
   if (results.length > 0) {
