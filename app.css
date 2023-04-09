@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 
 body {
@@ -13,51 +14,61 @@ body {
 input {
     display: block;
     align-content: center;
+    height: 35px;
+    border-bottom: 5px #FF0000 ;
+    
 
 }
 
 .search-container {
     display: block;
-    margin: 50%;
-    border-radius: 5px;
-    align-content: center;
-    border: 5px red;
+    margin: auto;
+    margin-top: 45%;
+    justify-content: center;
+    width: 200px;
+    height: 45px;
 }
 
 .search-container input,
 .search-container .suggestions {
-    background:  #FADA5E;
-    border-bottom: #FF0000;
+    background:  #ffffff42;
     border: #d8c60000;
-    box-sizing: 25px, 10px;
+    border-bottom: 1px solid #FF0000;
 }
 
-.search-container input {
-    /* TODO */
-   }
-
 .search-container .suggestions {
-    background-color:  #FADA5E;
+    background-color:  #ffffff42;
+    width: 200px;
+    max-height: 150px;
+    overflow-y: scroll;
+    z-index: 1;
+    padding: 0px;
 }
 
   ul {
     list-style: none;
+    margin: 0%;
+    max-width: 100%;
+    z-index: 2;
+    padding:0%;
+  }
 
-    
+  .suggestions {
+    max-width: 180px;
+    background-color: #ffffff42;
+
   }
   ul.has-suggestions {
-    background: #FADA5E;
+    background-color: #ffffff42;
     
   }
   ul li {
-    background: #FADA5E;
+    background-color: #ffffff42;
 
   }
   ul li:hover {
     background-color: #CC5500 ;
     font-weight: bold;
   }
-  
-  input {
-     /* TODO */
-  }
+
+
